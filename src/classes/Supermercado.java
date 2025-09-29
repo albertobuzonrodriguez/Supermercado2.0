@@ -43,7 +43,7 @@ class Cajera implements Runnable {
         System.out.println("Total productos procesados: " + totalProductos);
         System.out.println("Tiempo total: " + tiempoTotal + " segundos");
         if (totalProductos > 0) {
-            System.out.println("Promedio general: " + (tiempoTotal / totalProductos) + " segundos por producto");
+            System.out.println("Promedio general: " + ((double)tiempoTotal / (double)totalProductos) + " segundos por producto");
         }
         System.out.println("========================\n");
     }
