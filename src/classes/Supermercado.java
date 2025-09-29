@@ -20,8 +20,6 @@ class Cajera implements Runnable {
             Cliente cliente = clientes[i];
             int tiempoCliente = 0;
 
-            
-
             for (int j = 0; j < cliente.productos; j++) {
                 try {
                     Thread.sleep(1000 * cliente.tiempo);
@@ -35,6 +33,7 @@ class Cajera implements Runnable {
             }
 
             totalProductos += cliente.productos;
+            
             System.out.printf("%s termina con %s en el tiempo: %ds\n", nombreCajera, cliente.nombre, tiempoTotal);
         }
 
@@ -42,9 +41,7 @@ class Cajera implements Runnable {
         System.out.println("Total clientes atendidos: " + clientes.length);
         System.out.println("Total productos procesados: " + totalProductos);
         System.out.println("Tiempo total: " + tiempoTotal + " segundos");
-        if (totalProductos > 0) {
-            System.out.println("Promedio general: " + ((double)tiempoTotal / (double)totalProductos) + " segundos por producto");
-        }
+        System.out.println("Promedio general: " + ((double)tiempoTotal / (double)totalProductos) + " segundos por producto");
         System.out.println("========================\n");
     }
 }
